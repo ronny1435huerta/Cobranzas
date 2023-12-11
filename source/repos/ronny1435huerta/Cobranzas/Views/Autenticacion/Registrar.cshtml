@@ -1,0 +1,111 @@
+﻿@model Cobranzas.Models.Bean.Usuario
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Registrar</title>
+</head>
+<body>
+    <div class="banner">
+        <img src="~/img/rebelbw.jpeg" width="200" height="200" />
+    </div>
+    <h1 class="font-weight-bold text-center">Registrar</h1>
+<hr />
+<div class="row">
+    <div class="col-xl-12">
+        <form asp-action="Registrar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="display:none">
+                <label asp-for="ID_USUARIO" class="control-label"></label>
+                <input asp-for="ID_USUARIO" class="form-control" />
+                <span asp-validation-for="ID_USUARIO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="USERNAME" class="control-label"></label>
+                <input asp-for="USERNAME" class="form-control" required />
+                <span asp-validation-for="USERNAME" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CONTRA_USUARIO" class="control-label"></label>
+                <input asp-for="CONTRA_USUARIO" class="form-control" type="password" required/>
+                <span asp-validation-for="CONTRA_USUARIO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="passwordConfirm" class="control-label"></label>
+                <input asp-for="passwordConfirm" class="form-control" type="password" required />
+                <span asp-validation-for="passwordConfirm" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none">
+                <label asp-for="FECHA_REGISTRO" class="control-label"></label>
+                <input asp-for="FECHA_REGISTRO" class="form-control" />
+                <span asp-validation-for="FECHA_REGISTRO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FECHA_NACIMIENTO" class="control-label"></label>
+                <input asp-for="FECHA_NACIMIENTO" class="form-control" type="date" required/>
+                <span asp-validation-for="FECHA_NACIMIENTO" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none">
+                <label asp-for="STATUS_USUARIO" class="control-label"></label>
+                <input asp-for="STATUS_USUARIO" class="form-control" />
+                <span asp-validation-for="STATUS_USUARIO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EMAIL" class="control-label"></label>
+                <input asp-for="EMAIL" class="form-control" type="email" required/>
+                <span asp-validation-for="EMAIL" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none">
+                <label asp-for="FLAG" class="control-label"></label>
+                <input asp-for="FLAG" class="form-control" />
+                <span asp-validation-for="FLAG" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOMBRE_USUARIO" class="control-label"></label>
+                <input asp-for="NOMBRE_USUARIO" class="form-control" required/>
+                <span asp-validation-for="NOMBRE_USUARIO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="APELLIDO_PATERNO" class="control-label"></label>
+                <input asp-for="APELLIDO_PATERNO" class="form-control" required/>
+                <span asp-validation-for="APELLIDO_PATERNO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="APELLIDO_MATERNO" class="control-label"></label>
+                <input asp-for="APELLIDO_MATERNO" class="form-control" required />
+                <span asp-validation-for="APELLIDO_MATERNO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TELEFONO" class="control-label"></label>
+                <input asp-for="TELEFONO" class="form-control" required/>
+                <span asp-validation-for="TELEFONO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                        <div class="col-sm-6"><input type="submit" value="Registrar" class="btn btn-primary m-sm-3" /></div>
+                        <div class="col-sm-6"><a asp-action="Logueo" class="btn btn-warning m-sm-3">Cancelar</a></div>
+                        
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>
+   
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+<partial name="_NotificationPartial" />
+</html>

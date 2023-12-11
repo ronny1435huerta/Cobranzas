@@ -1,0 +1,438 @@
+﻿@model Cobranzas.Models.Bean.DescargaCampo
+<div style="padding-left:15%;padding-right:15%;padding-bottom:30px;">
+    
+    <div class="row p-3 border-0">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    </div>
+    <h3 class="fw-light font-monospace">CAMPOS</h3>
+    <!-- fila 1 -->
+    <div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarAlbum">ÁLBUM</label>
+                <input class="form-check-input" asp-for="SeleccionarAlbum" checked />
+                <span asp-validation-for="SeleccionarAlbum" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarFechaConsignacion">FECHA DE CONSIGNACIÓN</label>
+                <input class="form-check-input" asp-for="SeleccionarFechaConsignacion" checked />
+                <span asp-validation-for="SeleccionarFechaConsignacion" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarMarca">MARCA</label>
+                <input class="form-check-input" asp-for="SeleccionarMarca" />
+                <span asp-validation-for="SeleccionarMarca" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarModelo">MODELO</label>
+                <input class="form-check-input" asp-for="SeleccionarModelo" />
+                <span asp-validation-for="SeleccionarModelo" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+        <!-- fila 2 -->
+    <div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarPrecioPactado">PRECIO PACTADO</label>
+                <input class="form-check-input" asp-for="SeleccionarPrecioPactado" />
+                <span asp-validation-for="SeleccionarPrecioPactado" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarContrato">CONTRATO</label>
+                <input class="form-check-input" asp-for="SeleccionarContrato" checked />
+                <span asp-validation-for="SeleccionarContrato" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarDni">DNI</label>
+                <input class="form-check-input" asp-for="SeleccionarDni" />
+                <span asp-validation-for="SeleccionarDni" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarNombrePropietario">PROPIETARIO</label>
+                <input class="form-check-input" asp-for="SeleccionarNombrePropietario" checked />
+                <span asp-validation-for="SeleccionarNombrePropietario" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <!-- fila 3 -->
+    <div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarTipo">TIPO</label>
+                <input class="form-check-input" asp-for="SeleccionarTipo"/>
+                <span asp-validation-for="SeleccionarTipo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarCelular">CELULAR</label>
+                <input class="form-check-input" asp-for="SeleccionarCelular" checked />
+                <span asp-validation-for="SeleccionarCelular" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarCorreo">CORREO</label>
+                <input class="form-check-input" asp-for="SeleccionarCorreo" />
+                <span asp-validation-for="SeleccionarCorreo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarDireccion">DIRECCIÓN</label>
+                <input class="form-check-input" asp-for="SeleccionarDireccion" />
+                <span asp-validation-for="SeleccionarDireccion" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <!-- fila 4 -->
+    <div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarDistrito">DISTRITO</label>
+                <input class="form-check-input" asp-for="SeleccionarDistrito" />
+                <span asp-validation-for="SeleccionarDistrito" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarTipoPenalidad">TIPO DE PENALIDAD</label>
+                <input class="form-check-input" asp-for="SeleccionarTipoPenalidad" checked />
+                <span asp-validation-for="SeleccionarTipoPenalidad" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarPagare">PAGARÉ</label>
+                <input class="form-check-input" asp-for="SeleccionarPagare" checked />
+                <span asp-validation-for="SeleccionarPagare" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarFechaCobro">FECHA DE COBRO</label>
+                <input class="form-check-input" asp-for="SeleccionarFechaCobro" checked />
+                <span asp-validation-for="SeleccionarFechaCobro" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <!-- fila 5 -->
+    <div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarIdStatusCliente">STATUS CLIENTE</label>
+                <input class="form-check-input" asp-for="SeleccionarIdStatusCliente" />
+                <span asp-validation-for="SeleccionarIdStatusCliente" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarIdDemandaPrincipal">DEMANDA PRINCIPAL</label>
+                <input class="form-check-input" asp-for="SeleccionarIdDemandaPrincipal" />
+                <span asp-validation-for="SeleccionarIdDemandaPrincipal" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarFechaIngreso">FECHA DE INGRESO</label>
+                <input class="form-check-input" asp-for="SeleccionarFechaIngreso" />
+                <span asp-validation-for="SeleccionarFechaIngreso" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarFechaArbitraje">FECHA DE ARBITRAJE</label>
+                <input class="form-check-input" asp-for="SeleccionarFechaArbitraje"/>
+                <span asp-validation-for="SeleccionarFechaArbitraje" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <!-- fila 6 --><div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarPenalidad">PENALIDAD</label>
+                <input class="form-check-input" asp-for="SeleccionarPenalidad" checked />
+                <span asp-validation-for="SeleccionarPenalidad" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarMora">MORA</label>
+                <input class="form-check-input" asp-for="SeleccionarMora" />
+                <span asp-validation-for="SeleccionarMora" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarGastosCobranza">GASTOS COBRANZA</label>
+                <input class="form-check-input" asp-for="SeleccionarGastosCobranza" />
+                <span asp-validation-for="SeleccionarGastosCobranza" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarGastosCochera">GASTOS COCHERA</label>
+                <input class="form-check-input" asp-for="SeleccionarGastosCochera" />
+                <span asp-validation-for="SeleccionarGastosCochera" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- fila 7 -->
+    <div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarGastoTotal">GASTO TOTAL</label>
+                <input class="form-check-input" asp-for="SeleccionarGastoTotal" />
+                <span asp-validation-for="SeleccionarGastoTotal" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarFechaEmbargo">FECHA DE EMBARGO</label>
+                <input class="form-check-input" asp-for="SeleccionarFechaEmbargo" />
+                <span asp-validation-for="SeleccionarFechaEmbargo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarStatusSunarp">STATUS SUNARP</label>
+                <input class="form-check-input" asp-for="SeleccionarStatusSunarp" />
+                <span asp-validation-for="SeleccionarStatusSunarp" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarMarcaAutoCautelar">MARCA CAUTELAR</label>
+                <input class="form-check-input" asp-for="SeleccionarMarcaAutoCautelar" />
+                <span asp-validation-for="SeleccionarMarcaAutoCautelar" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <!-- fila 8 -->
+    <div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarModeloAutoCautelar"> MODELO CAUTELAR</label>
+                <input class="form-check-input" asp-for="SeleccionarModeloAutoCautelar" />
+                <span asp-validation-for="SeleccionarModeloAutoCautelar" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarFechaAutoCautelar">FECHA AUTO CAUTELAR</label>
+                <input class="form-check-input" asp-for="SeleccionarFechaAutoCautelar" />
+                <span asp-validation-for="SeleccionarFechaAutoCautelar" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarPartidaRegistralAutoCautelar">PARTIDA REGISTRAL</label>
+                <input class="form-check-input" asp-for="SeleccionarPartidaRegistralAutoCautelar" />
+                <span asp-validation-for="SeleccionarPartidaRegistralAutoCautelar" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarPlacaAutoCautelar">PLACA AUTO CAUTELAR</label>
+                <input class="form-check-input" asp-for="SeleccionarPlacaAutoCautelar" />
+                <span asp-validation-for="SeleccionarPlacaAutoCautelar" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <!-- fila 9 -->
+    <div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarIdStatusJudicial"> STATUS INTERNO</label>
+                <input class="form-check-input" asp-for="SeleccionarIdStatusJudicial" />
+                <span asp-validation-for="SeleccionarIdStatusJudicial" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarIdStatusPoderJudicial">STATUS PJ</label>
+                <input class="form-check-input" asp-for="SeleccionarIdStatusPoderJudicial" />
+                <span asp-validation-for="SeleccionarIdStatusPoderJudicial" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarIdPasosCobranza">PASOS DE COBRANZA</label>
+                <input class="form-check-input" asp-for="SeleccionarIdPasosCobranza" />
+                <span asp-validation-for="SeleccionarIdPasosCobranza" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarFechaIngresoMc">FECHA INGRESO MC</label>
+                <input class="form-check-input" asp-for="SeleccionarFechaIngresoMc" />
+                <span asp-validation-for="SeleccionarFechaIngresoMc" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <!-- fila 10 -->
+    <div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarFechaConcesorio">FECHA CONCESORIO</label>
+                <input class="form-check-input" asp-for="SeleccionarFechaConcesorio" />
+                <span asp-validation-for="SeleccionarFechaConcesorio" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarIdApoderado">APODERADO</label>
+                <input class="form-check-input" asp-for="SeleccionarIdApoderado" />
+                <span asp-validation-for="SeleccionarIdApoderado" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarIdProcurador">PROCURADOR</label>
+                <input class="form-check-input" asp-for="SeleccionarIdProcurador" />
+                <span asp-validation-for="SeleccionarIdProcurador" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarTipoJuzgado">TIPO JUZGADO</label>
+                <input class="form-check-input" asp-for="SeleccionarTipoJuzgado" />
+                <span asp-validation-for="SeleccionarTipoJuzgado" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <!-- fila 11 -->
+    <div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarDistritoJuzgado">DISTRITO JUZGADO</label>
+                <input class="form-check-input" asp-for="SeleccionarDistritoJuzgado" />
+                <span asp-validation-for="SeleccionarDistritoJuzgado" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarNumeroDeJuzgado">NÚMERO JUZGADO</label>
+                <input class="form-check-input" asp-for="SeleccionarNumeroDeJuzgado" />
+                <span asp-validation-for="SeleccionarNumeroDeJuzgado" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarNumeroExpediente">NÚMERO EXPEDIENTE</label>
+                <input class="form-check-input" asp-for="SeleccionarNumeroExpediente" />
+                <span asp-validation-for="SeleccionarNumeroExpediente" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarCodigoCautelar">CÓDIGO CAUTELAR</label>
+                <input class="form-check-input" asp-for="SeleccionarCodigoCautelar" />
+                <span asp-validation-for="SeleccionarCodigoCautelar" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <!-- fila 12 -->
+    <div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarNombreEspecialista">NOMBRE ESPECIALISTA</label>
+                <input class="form-check-input" asp-for="SeleccionarNombreEspecialista" />
+                <span asp-validation-for="SeleccionarNombreEspecialista" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarMontoPetitorio">MONTO PETITORIO</label>
+                <input class="form-check-input" asp-for="SeleccionarMontoPetitorio" />
+                <span asp-validation-for="SeleccionarMontoPetitorio" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarIdTipoImpulso">TIPO IMPULSO</label>
+                <input class="form-check-input" asp-for="SeleccionarIdTipoImpulso" />
+                <span asp-validation-for="SeleccionarIdTipoImpulso" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarTipoSolicitudMedidaCautelar">SOLICITUD DE MC</label>
+                <input class="form-check-input" asp-for="SeleccionarTipoSolicitudMedidaCautelar" />
+                <span asp-validation-for="SeleccionarTipoSolicitudMedidaCautelar" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <!-- fila 13 -->
+    <div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarRespuestaMedidaCautelar">RESPUESTA DE MC</label>
+                <input class="form-check-input" asp-for="SeleccionarRespuestaMedidaCautelar" />
+                <span asp-validation-for="SeleccionarRespuestaMedidaCautelar" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarObservaciones">OBSERVACIONES</label>
+                <input class="form-check-input" asp-for="SeleccionarObservaciones" />
+                <span asp-validation-for="SeleccionarObservaciones" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check form-switch">
+                <label class="form-check-label" asp-for="SeleccionarestadoCliente">ESTADO CLIENTE</label>
+                <input class="form-check-input" asp-for="SeleccionarestadoCliente" />
+                <span asp-validation-for="SeleccionarestadoCliente" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <br />
+    <h3 class="fw-light font-monospace">TIPO DE ARCHIVO</h3>
+    <div class="form-row d-flex flex-wrap">
+        <div class="col-md-3">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="SeleccionarArchivo" value="CSV" checked />
+                <label class="form-check-label">CSV</label>
+                <span asp-validation-for="SeleccionarArchivo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="SeleccionarArchivo" value="XLSX" />
+                <label class="form-check-label">XLSX</label>
+                <span asp-validation-for="SeleccionarArchivo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="SeleccionarArchivo" value="SQL" />
+                <label class="form-check-label">SQL</label>
+                <span asp-validation-for="SeleccionarArchivo" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+
+
+

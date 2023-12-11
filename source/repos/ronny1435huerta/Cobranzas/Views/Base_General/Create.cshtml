@@ -1,0 +1,389 @@
+﻿@model Cobranzas.Models.Bean.Base_General
+
+@{
+    ViewData["Title"] = "Base General";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+
+<h1 class="font-weight-bold text-center">Registrar</h1>
+<br />
+<br />
+
+<form asp-action="Create">
+    <div id="tabs">
+        <ul class="nav nav-tabs">
+            <li class="nav-item" style="margin-right: 5px;"><a class="nav-link active" id="ClienteTab" data-toggle="tab" href="#section1" aria-controls="section1" aria-selected="true">Datos del Cliente</a></li>
+            <li class="nav-item" style="margin-right: 5px;"><a class="nav-link" id="TransaccionTab" data-toggle="tab" href="#section2" aria-controls="section2" aria-selected="true">Datos de transacción</a></li>
+            <li class="nav-item" style="margin-right: 5px;"><a class="nav-link" id="CobroTab" data-toggle="tab" href="#section3" aria-controls="section3" aria-selected="true">Datos de Cobranza</a></li>
+            <li class="nav-item" style="margin-right: 5px;"><a class="nav-link" id="DemandaTab" data-toggle="tab" href="#section4" aria-controls="section4" aria-selected="true">Datos de Demanda</a></li>
+            <li class="nav-item" style="margin-right: 5px;"><a class="nav-link" id="CautelarTab" data-toggle="tab" href="#section5" aria-controls="section5" aria-selected="true">Datos de Medida Cautelar</a></li>
+            <li class="nav-item" style="margin-right: 5px;"><a class="nav-link" id="SunarpTab" data-toggle="tab" href="#section6" aria-controls="section6" aria-selected="true">Datos de índice SUNARP</a></li>
+            <li class="nav-item"><a class="nav-link" id="ArbitrajeTab" data-toggle="tab" href="#section7" aria-controls="section7" aria-selected="true">Datos de Arbitraje</a></li>
+           
+
+            <!-- Agrega más pestañas según tus necesidades -->
+        </ul>
+        <!-- Agrega más divs para otras secciones del formulario -->
+    </div>
+    <br />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="tab-content" id="myTabsContent">
+        <!--------------------------------- Contenido de la primera pestaña (Sección 1 del formulario) ------------------------------------>
+        <div class="tab-pane fade show active" id="section1" role="tabpanel" aria-labelledby="ClienteTab">
+            <div class="form-group" style="display:none">
+                <label asp-for="ID_BASE" class="control-label"></label>
+                <input asp-for="ID_BASE" class="form-control" />
+                <span asp-validation-for="ID_BASE" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="form-group">
+                        <label asp-for="ID_DOCUMENTO" class="control-label"></label>
+                        <select asp-for="ID_DOCUMENTO" asp-items="@ViewBag.Documento" class="form-select"></select>
+                        <span asp-validation-for="ID_DOCUMENTO" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="form-group">
+                        <label asp-for="NUMERO_DOCUMENTO" class="control-label"></label>
+                        <input asp-for="NUMERO_DOCUMENTO" class="form-control" />
+                        <span asp-validation-for="NUMERO_DOCUMENTO" class="text-danger"></span>
+                    </div>
+                </div>
+                
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="NOMBRE_PROPIETARIO" class="control-label"></label>
+                <input asp-for="NOMBRE_PROPIETARIO" class="form-control" />
+                <span asp-validation-for="NOMBRE_PROPIETARIO" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label asp-for="CELULAR" class="control-label"></label>
+                        <input asp-for="CELULAR" class="form-control" />
+                        <span asp-validation-for="CELULAR" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label asp-for="CELULAR2" class="control-label"></label>
+                        <input asp-for="CELULAR2" class="form-control" />
+                        <span asp-validation-for="CELULAR2" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="CORREO" class="control-label"></label>
+                <input asp-for="CORREO" class="form-control" />
+                <span asp-validation-for="CORREO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DIRECCION" class="control-label"></label>
+                <input asp-for="DIRECCION" class="form-control" />
+                <span asp-validation-for="DIRECCION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ID_DISTRITO" class="control-label"></label>
+                <select asp-for="ID_DISTRITO" asp-items="@ViewBag.Distritos" class="form-select"></select>
+                <span asp-validation-for="ID_DISTRITO" class="text-danger"></span>
+            </div>
+        </div>
+        <!--------------------------------- Contenido de la segunda pestaña (Sección 2 del formulario) ------------------------------------>
+        <div class="tab-pane fade" id="section2" role="tabpanel" aria-labelledby="TransaccionTab">
+            <div class="form-group">
+                <label asp-for="ALBUM" class="control-label"></label>
+                <input asp-for="ALBUM" class="form-control"/>
+                <span asp-validation-for="ALBUM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CONTRATO" class="control-label"></label>
+                <input asp-for="CONTRATO" class="form-control" />
+                <span asp-validation-for="CONTRATO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FECHA_CONSIGNACION" class="control-label"></label>
+                <input asp-for="FECHA_CONSIGNACION" class="form-control" type="date"/>
+                <span asp-validation-for="FECHA_CONSIGNACION" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <div class="form-group">
+                        <label asp-for="ID_MONEDA" class="control-label"></label>
+                        <select asp-for="ID_MONEDA" asp-items="@ViewBag.Monedas" class="form-select"></select>
+                        <span asp-validation-for="ID_MONEDA" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="form-group">
+                        <label asp-for="PRECIO_PACTADO" class="control-label"></label>
+                        <input asp-for="PRECIO_PACTADO" class="form-control" />
+                        <span asp-validation-for="PRECIO_PACTADO" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>         
+            <div class="form-group">
+                <label asp-for="TIPO" class="control-label"></label>
+                <select asp-for="TIPO" asp-items="@ViewBag.Tipo" class="form-select"><</select>
+                <span asp-validation-for="TIPO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MARCA" class="control-label"></label>
+                <input asp-for="MARCA" class="form-control" />
+                <span asp-validation-for="MARCA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MODELO" class="control-label"></label>
+                <input asp-for="MODELO" class="form-control" />
+                <span asp-validation-for="MODELO" class="text-danger"></span>
+            </div>
+        </div>
+        <!-------------------------------- Contenido de la tercera pestaña (Sección 3 del formulario) ------------------------------------->
+        <div class="tab-pane fade" id="section3" role="tabpanel" aria-labelledby="CobroTab">
+
+            <div class="form-group">
+                <label asp-for="FECHA_COBRO" class="control-label"></label>
+                <input asp-for="FECHA_COBRO" class="form-control" type="date"/>
+                <span asp-validation-for="FECHA_COBRO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TIPO_PENALIDAD" class="control-label"></label>
+                <select asp-for="TIPO_PENALIDAD" asp-items="@ViewBag.TipoPenalidad" class="form-select"></select>
+                <span asp-validation-for="TIPO_PENALIDAD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PAGARE" class="control-label"></label>
+                <select asp-for="PAGARE" asp-items="@ViewBag.Pagare" class="form-select"><</select>
+                <span asp-validation-for="PAGARE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PENALIDAD" class="control-label"></label>
+                <input asp-for="PENALIDAD" class="form-control" />
+                <span asp-validation-for="PENALIDAD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MORA" class="control-label"></label>
+                <select asp-for="MORA" asp-items="@ViewBag.Mora_diaria" class="form-select"></select>
+                <span asp-validation-for="MORA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GASTOS_COBRANZA" class="control-label"></label>
+                <select asp-for="GASTOS_COBRANZA" asp-items="@ViewBag.Gastos_cobranza" class="form-select"></select>
+                <span asp-validation-for="GASTOS_COBRANZA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GASTOS_COCHERA" class="control-label"></label>
+                <input asp-for="GASTOS_COCHERA" class="form-control"/>
+                <span asp-validation-for="GASTOS_COCHERA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ID_PASO_COBRANZA" class="control-label"></label>
+                <select asp-for="ID_PASO_COBRANZA" asp-items="@ViewBag.Pasos_Cobranzas" class="form-select"></select>
+                <span asp-validation-for="ID_PASO_COBRANZA" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-------------------------------- Contenido de la cuarta pestaña (Sección 4 del formulario) -------------------------------------->
+        <div class="tab-pane fade" id="section4" role="tabpanel" aria-labelledby="EstadoTab">
+
+            <div class="form-group">
+                <label asp-for="FECHA_INGRESO_DEMANDA" class="control-label"></label>
+                <input asp-for="FECHA_INGRESO_DEMANDA" class="form-control" type="date"/>
+                <span asp-validation-for="FECHA_INGRESO_DEMANDA" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ID_DEMANDA_INTERNA_PRINCIPAL" class="control-label"></label>
+                <select asp-for="ID_DEMANDA_INTERNA_PRINCIPAL" asp-items="@ViewBag.Demanda_Interna" class="form-select"></select>
+                <span asp-validation-for="ID_DEMANDA_INTERNA_PRINCIPAL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ID_DEMANDA_PRINCIPAL_JUDICIAL" class="control-label"></label>
+                <select asp-for="ID_DEMANDA_PRINCIPAL_JUDICIAL" asp-items="@ViewBag.Demanda_Judicial" class="form-select"></select>
+                <span asp-validation-for="ID_DEMANDA_PRINCIPAL_JUDICIAL" class="text-danger"></span>
+            </div>
+        </div>
+        <!------------------------------- Contenido de la quinta pestaña (Sección 5 del formulario) ---------------------------------------->
+        <div class="tab-pane fade" id="section5" role="tabpanel" aria-labelledby="CautelarTab">
+            <div class="form-group">
+                <label asp-for="FECHA_INGRESO_MC" class="control-label"></label>
+                <input asp-for="FECHA_INGRESO_MC" class="form-control" type="date"/>
+                <span asp-validation-for="FECHA_INGRESO_MC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FECHA_CONCESORIO" class="control-label"></label>
+                <input asp-for="FECHA_CONCESORIO" class="form-control" type="date"/>
+                <span asp-validation-for="FECHA_CONCESORIO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FECHA_EMBARGO" class="control-label"></label>
+                <input asp-for="FECHA_EMBARGO" class="form-control" type="date"/>
+                <span asp-validation-for="FECHA_EMBARGO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ID_STATUS_JUDICIAL" class="control-label"></label>
+                <select asp-for="ID_STATUS_JUDICIAL" asp-items="@ViewBag.Status_Interno_MC" class="form-select"></select>
+                <span asp-validation-for="ID_STATUS_JUDICIAL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ID_STATUS_PODER_JUDICIAL" class="control-label"></label>
+                <select asp-for="ID_STATUS_PODER_JUDICIAL" asp-items="@ViewBag.Status_Judicial_PJ" class="form-select"></select>
+                <span asp-validation-for="ID_STATUS_PODER_JUDICIAL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ID_TIPO_IMPULSO" class="control-label"></label>
+                <select asp-for="ID_TIPO_IMPULSO" asp-items="@ViewBag.Tipos_Impulso" class="form-select"></select>
+                <span asp-validation-for="ID_TIPO_IMPULSO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ID_APODERADO" class="control-label"></label>
+                <select asp-for="ID_APODERADO" asp-items="@ViewBag.Apoderados" class="form-select"></select>
+                <span asp-validation-for="ID_APODERADO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ID_PROCURADOR" class="control-label"></label>
+                <select asp-for="ID_PROCURADOR" asp-items="@ViewBag.Procuradores" class="form-control"></select>
+                <span asp-validation-for="ID_PROCURADOR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TIPO_JUZGADO" class="control-label"></label>
+                <select asp-for="TIPO_JUZGADO" asp-items="@ViewBag.TipoJuzgado" class="form-select"></select>
+                <span asp-validation-for="TIPO_JUZGADO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ID_DISTRITO_JUZGADO" class="control-label"></label>
+                <select asp-for="ID_DISTRITO_JUZGADO" asp-items="@ViewBag.Distritos" class="form-select"></select>
+                <span asp-validation-for="ID_DISTRITO_JUZGADO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NUMERO_DE_JUZGADO" class="control-label"></label>
+                <input asp-for="NUMERO_DE_JUZGADO" class="form-control" />
+                <span asp-validation-for="NUMERO_DE_JUZGADO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NUMERO_EXPEDIENTE" class="control-label"></label>
+                <input asp-for="NUMERO_EXPEDIENTE" class="form-control" />
+                <span asp-validation-for="NUMERO_EXPEDIENTE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CODIGO_CAUTELAR" class="control-label"></label>
+                <input asp-for="CODIGO_CAUTELAR" class="form-control" />
+                <span asp-validation-for="CODIGO_CAUTELAR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOMBRE_ESPECIALISTA" class="control-label"></label>
+                <input asp-for="NOMBRE_ESPECIALISTA" class="form-control" />
+                <span asp-validation-for="NOMBRE_ESPECIALISTA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MONTO_PETITORIO" class="control-label"></label>
+                <input asp-for="MONTO_PETITORIO" class="form-control" />
+                <span asp-validation-for="MONTO_PETITORIO" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <div class="form-group">
+                        <label asp-for="MEDIDA_CAUTELAR" class="control-label"></label>
+                        <select asp-for="MEDIDA_CAUTELAR" asp-items="@ViewBag.Pagare" class="form-select"></select>
+                        <span asp-validation-for="MEDIDA_CAUTELAR" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <label asp-for="TIPO_SOLICITUD_MEDIDA_CAUTELAR" class="control-label"></label>
+                        <select asp-for="TIPO_SOLICITUD_MEDIDA_CAUTELAR" asp-items="@ViewBag.TipoSolicitudMedidaCautelar" class="form-select"></select>
+                        <span asp-validation-for="TIPO_SOLICITUD_MEDIDA_CAUTELAR" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <label asp-for="RESPUESTA_MEDIDA_CAUTELAR" class="control-label"></label>
+                        <select asp-for="RESPUESTA_MEDIDA_CAUTELAR" asp-items="@ViewBag.TipoSolicitudMedidaCautelar" class="form-select"></select>
+                        <span asp-validation-for="RESPUESTA_MEDIDA_CAUTELAR" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>          
+        </div>
+        <!----------------------------- Contenido de la sexta pestaña (Sección 6 del formulario) ------------------------------------->
+        <div class="tab-pane fade" id="section6" role="tabpanel" aria-labelledby="SunarpTab">
+            <div class="form-group">
+                <label asp-for="STATUS_SUNARP" class="control-label"></label>
+                <select asp-for="STATUS_SUNARP" class="form-select" asp-items="@ViewBag.StatusSunarp"></select>
+                <span asp-validation-for="STATUS_SUNARP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MARCA_AUTO_CAUTELAR" class="control-label"></label>
+                <input asp-for="MARCA_AUTO_CAUTELAR" class="form-control" />
+                <span asp-validation-for="MARCA_AUTO_CAUTELAR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MODELO_AUTO_CAUTELAR" class="control-label"></label>
+                <input asp-for="MODELO_AUTO_CAUTELAR" class="form-control" />
+                <span asp-validation-for="MODELO_AUTO_CAUTELAR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FECHA_AUTO_CAUTELAR" class="control-label"></label>
+                <input asp-for="FECHA_AUTO_CAUTELAR" class="form-control" type="date" />
+                <span asp-validation-for="FECHA_AUTO_CAUTELAR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PARTIDA_REGISTRAL_AUTO_CAUTELAR" class="control-label"></label>
+                <input asp-for="PARTIDA_REGISTRAL_AUTO_CAUTELAR" class="form-control" />
+                <span asp-validation-for="PARTIDA_REGISTRAL_AUTO_CAUTELAR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PLACA_AUTO_CAUTELAR" class="control-label"></label>
+                <input asp-for="PLACA_AUTO_CAUTELAR" class="form-control" />
+                <span asp-validation-for="PLACA_AUTO_CAUTELAR" class="text-danger"></span>
+            </div>
+        </div>
+        <!----------------------------- Contenido de la séptima pestaña (Sección 7 del formulario) ------------------------------------->
+        <div class="tab-pane fade" id="section7" role="tabpanel" aria-labelledby="ArbitrajeTab">
+
+            <div class="form-group">
+                <label asp-for="ID_STATUS_CLIENTE" class="control-label"></label>
+                <select asp-for="ID_STATUS_CLIENTE" class="form-select" asp-items="@ViewBag.Status_Arbitraje"></select>
+                <span asp-validation-for="ID_STATUS_CLIENTE" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FECHA_ARBITRAJE" class="control-label"></label>
+                <input asp-for="FECHA_ARBITRAJE" class="form-control" type="date"/>
+                <span asp-validation-for="FECHA_ARBITRAJE" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1"><input type="submit" value="Guardar" class="btn btn-primary" /></div>
+                <div class="col-sm-1"><a asp-action="listar_base" class="btn btn-warning">Cancelar</a></div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function () {
+            // Escuchar el clic en enlaces dentro de la lista de navegación
+            $('.nav-link').on('click', function (e) {
+                e.preventDefault(); // Evita la acción predeterminada del enlace
+
+                // Obtener el atributo data-toggle para identificar la pestaña deseada
+                var tabToggle = $(this).attr('data-toggle');
+
+                // Ocultar todas las pestañas
+                $('.tab-pane').removeClass('show active');
+
+                // Mostrar la pestaña deseada
+                $(tabToggle).addClass('show active');
+            });
+        });
+    </script>
+}
+

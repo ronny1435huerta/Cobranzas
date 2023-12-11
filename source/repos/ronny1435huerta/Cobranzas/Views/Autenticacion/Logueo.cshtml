@@ -1,0 +1,49 @@
+﻿@model Cobranzas.Models.Bean.Usuario
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Préstamos</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <div class="banner">
+        <img src="~/img/rebelbw.jpeg" width="200" height="200" />
+    </div>
+    <div class="container">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="login-box">
+            <h2>Iniciar Sesión</h2>
+            <form class="login-form" asp-action="Logueo">
+                <div class="form-group">
+                    <input type="text" id="username" name="username" asp-for="USERNAME" placeholder="Usuario" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" asp-for="CONTRA_USUARIO" placeholder="Contraseña" required>
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+        <div>
+        @Html.ActionLink("Registrate", "Registrar",new{@class="btn btn-link",@role="button"})
+        </div>
+        <div>
+            @Html.ActionLink("¿Olvidaste tu contraseña?", "RecuperarPassword",new{@class="btn btn-link",@role="button"})
+        </div>
+    </div>
+</body>
+<partial name="_NotificationPartial" />
+</html>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+    }
+    }

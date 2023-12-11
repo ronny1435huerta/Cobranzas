@@ -1,0 +1,172 @@
+﻿@model IEnumerable<Cobranzas.Models.Bean.Base_General>
+
+@{
+    ViewData["Title"] = "Base General";
+    Layout = "~/Views/Shared/_LayoutMaster.cshtml";
+}
+<h1 class="font-weight-bold text-center">Base General</h1>
+<br />
+
+<div class="caja">
+    <p>
+        <a asp-action="Create" class="btn btn-warning"><i class='bx bx-folder-plus'></i> Nuevo</a>
+    </p>
+    <p>Total: $</p>
+</div>
+<!-- ComboBox para elegir la columna -->
+<div class="row">
+    <div class="col-md-2">
+        <!-- Puedes ajustar el tamaño de la columna según tus necesidades -->
+        <label for="columnSelector" class="label-style">Seleccionar filtro:</label>
+        <select id="columnSelector" class="form-select select-style">
+            <option value="0">Album</option>
+            <option value="2">Número de contrato</option>
+            <option value="3">Nombre del propietario</option>
+            <option value="4">Celular</option>
+            <option value="5">Tipo de penalidad</option>
+            <option value="6">Pagaré</option>
+            <!-- Agrega opciones para las demás columnas que quieras filtrar -->
+        </select>
+    </div>
+    <div class="col-md-2">
+        <!-- Puedes ajustar el tamaño de la columna según tus necesidades -->
+        <label for="filterInput" class="label-style">Buscar:</label>
+        <input type="text" id="filterInput" class="form-control input-style" />
+    </div>
+</div>
+<br />
+<div class="table-responsive">
+    <table class="table table-bordered align-content-center" id="tabla_Principal">
+        <thead>
+            <tr class="table-primary">
+                <th class="align-middle text-center">Album</th>
+                <th class="align-middle text-center">Fecha de consignación</th>
+                <th class="align-middle text-center">Número de contrato</th>
+                <th class="align-middle text-center">Nombre del propietario</th>
+                <th class="align-middle text-center">Celular</th>
+                <th class="align-middle text-center">Tipo de penalidad</th>
+                <th class="align-middle text-center">Pagaré</th>
+                <th class="align-middle text-center">Fecha de cobro</th>
+                <th class="align-middle text-center">Penalidad</th>
+                <th class="align-middle text-center">Mora</th>
+                <th class="align-middle text-center">Deuda total</th>
+                <th class="align-middle text-center">Monto Pagado</th>
+                <th class="align-middle text-center">Saldo</th>
+                <th class="align-middle text-center">Editar</th>
+                <th class="align-middle text-center">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ALBUM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FECHA_CONSIGNACION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CONTRATO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOMBRE_PROPIETARIO)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.CELULAR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIPO_PENALIDAD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAGARE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FECHA_COBRO.ToShortDateString())
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PENALIDAD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MORA_TOTAL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GASTO_TOTAL)
+            </td>
+            <td>$0</td>
+            <td>$0</td>
+
+            <td class="align-middle text-center">
+                        @Html.ActionLink("", "Edit", new { id=item.ID_BASE },new{@class="btn btn-primary bx bx-pencil",@role="button"})
+            </td>
+            <td class="align-middle text-center">
+                        <a onclick="confirmDelete('@item.ID_BASE')" class="btn btn-danger bx bx-trash"></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+<br />
+
+<div class="col-4 text-left">
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#descargaModal">Descarga</button>
+</div>
+
+<div class="modal fade" id="descargaModal" role="dialog">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <form method="post" enctype="multipart/form-data">
+                <div class="modal-header bg-dark text-white">
+                    <div class="d-flex justify-content-center align-items-center w-100">
+                        <h2 class="modal-title font-monospace">
+                            Descarga
+                        </h2>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Contenido del modal, utilizando el modelo DescargaConfiguracion -->
+                    @await Html.PartialAsync("ConfigurarDescarga", new Cobranzas.Models.Bean.DescargaCampo())
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" asp-action="DescargaArchivo" asp-controller="Base_General">Aceptar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br />
+<script>
+    $(document).ready(function () {
+        var table = $('#tabla_Principal').DataTable({
+            "ordering": false,
+            "paging": true,
+            "searching": true, // Desactiva la búsqueda predeterminada
+            "info": true,
+            "language": { url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json" },
+            "initComplete": function () {
+                // Oculta el cuadro de búsqueda predeterminado
+
+
+                // Agregar evento de cambio al ComboBox para elegir la columna de búsqueda
+                $('#columnSelector').on('change', function () {
+                    var columnIndex = $(this).val();
+                    // Desactivar la búsqueda en todas las columnas
+                    table.columns().every(function () {
+                        this.search('');
+                    });
+                    // Activar la búsqueda solo en la columna seleccionada
+                    table.columns(columnIndex).search($('#filterInput').val()).draw();
+                });
+
+                // Agregar evento de input al campo de filtro para búsqueda en tiempo real
+                $('#filterInput').on('input', function () {
+                    var columnIndex = $('#columnSelector').val();
+                    // Activar la búsqueda solo en la columna seleccionada
+                    table.columns(columnIndex).search($(this).val()).draw();
+                });
+            }
+        });
+    });
+</script>
